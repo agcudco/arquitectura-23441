@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/chat")
 public class ChatController {
-
 
     private final ChatClient chatClient;
 
@@ -18,7 +18,7 @@ public class ChatController {
         this.chatClient = chatClient.build();
     }
 
-    @GetMapping("/consulta/")
+    @GetMapping("/consulta")
     public String chat(@RequestParam String message) {
         return this.chatClient.prompt()
                 .user(message)
@@ -26,7 +26,7 @@ public class ChatController {
                 .content();
     }
 
-    @GetMapping("/stories/")
+    @GetMapping("/stories")
     @ResponseBody
     public Map<String, String> stories(@RequestParam String texto) {
         String storie = this.chatClient.prompt()
