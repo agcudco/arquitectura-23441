@@ -6,7 +6,7 @@ spring:
     name: my-application
   ai:
     openai:
-      api-key: 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
+      api-key: 
       model: "gpt-4" # modelo de OpenAI a utilizar
       endpoint: "https://api.openai.com/v1/chat/completions" # endpoint de OpenAI para chat completions
       temperature: 0.7 # nivel de creatividad de las respuestas generadas por el modelo
